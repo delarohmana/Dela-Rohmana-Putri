@@ -8,7 +8,7 @@ def main():
     tabs = st.sidebar.radio("Menu", ["Pertanyaan 1", "Pertanyaan 2"])
     
     if tabs == "Pertanyaan 1":
-        dela_daily = pd.read_csv('C:/Users/ASUS/Downloads/dashboard/all_data.csv')  
+        dela_daily = pd.read_csv('all_data.csv')  
         jumlah_pengguna_per_musim = dela_daily.groupby('season')['cnt'].sum()
         st.title("Visualisasi Data")
         fig, ax = plt.subplots()
@@ -19,7 +19,7 @@ def main():
         st.pyplot(fig)
 
     elif tabs == "Pertanyaan 2":
-        dela_daily = pd.read_csv('C:/Users/ASUS/Downloads/dashboard/all_data.csv')
+        dela_daily = pd.read_csv('all_data.csv')
         penyewaan_per_hari = dela_daily.groupby(['workingday', 'holiday'])['cnt'].sum()
         st.title("Visualisasi Data")
         fig, ax = plt.subplots()
